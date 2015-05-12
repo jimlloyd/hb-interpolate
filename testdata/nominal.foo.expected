@@ -1,0 +1,4 @@
+// nominal.template
+hb-interpolate
+git+https://github.com/jimlloyd/hb-interpolate.git
+Jim Lloyd <jim.lloyd@gmail.com> (https://github.com/jimlloyd)

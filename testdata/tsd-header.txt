@@ -1,0 +1,7 @@
+// Type definitions for {{name}} {{version}}
+// Project: {{repository.url}}
+// Definitions by: {{#if author.name}}{{author.name}} <{{author.email}}> ({{author.url}}){{else}}{{author}}{{/if}}
+// Definitions: https://github.com/borisyankov/DefinitelyType
+
+/// <reference path="java.d.ts"/>
+/// <reference path="../bluebird/bluebird.d.ts"/>

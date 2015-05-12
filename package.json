@@ -1,0 +1,43 @@
+{
+  "name": "hb-interpolate",
+  "version": "1.0.0",
+  "description": "Interpolate a json file through a Handlebars template file to stdout.",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "bin": {
+    "hb-interpolate": "bin/hb-interpolate.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimlloyd/hb-interpolate.git"
+  },
+  "keywords": [
+    "handlebars",
+    "json",
+    "interpolate",
+    "render",
+    "cli"
+  ],
+  "author": "Jim Lloyd <jim.lloyd@gmail.com> (https://github.com/jimlloyd)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimlloyd/hb-interpolate/issues"
+  },
+  "homepage": "https://github.com/jimlloyd/hb-interpolate",
+  "dependencies": {
+    "bluebird": "^2.9.25",
+    "chalk": "^1.0.0",
+    "commander": "^2.8.1",
+    "debug": "^2.2.0",
+    "handlebars": "^3.0.3",
+    "jsonfile": "^2.0.0",
+    "lodash": "^3.8.0",
+    "read-package-json": "^2.0.0"
+  },
+  "devDependencies": {},
+  "directories": {
+    "test": "test"
+  }
+}

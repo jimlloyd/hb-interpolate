@@ -1,0 +1,8 @@
+// nominal.template
+{{name}}
+{{repository.url}}
+{{#if author.name}}
+{{author.name}} <mailto:{{author.name}}>
+{{else}}
+{{author}}
+{{/if}}
