@@ -1,9 +1,11 @@
 # hb-interpolate
 *Interpolate a json file through a [Handlebars](http://handlebarsjs.com/) template file to stdout.*
 
+[![Build Status](https://travis-ci.org/jimlloyd/hb-interpolate.svg?branch=master)](https://travis-ci.org/jimlloyd/hb-interpolate)
+
 ### About
 
-`hb-interpolate` is a very simple command line tool that reads a `.json` file, and handlebars template file, performs the implied interpolation, and output the result to stdout.
+`hb-interpolate` is a very simple command line tool that reads a `.json` file and a Handlebars template file, and then writes the implied interpolation to stdout.
 
 ### Usage
 
