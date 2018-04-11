@@ -31,7 +31,7 @@
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "debug": "^2.2.0",
-    "handlebars": "^3.0.3",
+    "handlebars": "^4.0.0",
     "jsonfile": "^2.0.0",
     "lodash": "^3.8.0",
     "npm": "^5.8.0",
