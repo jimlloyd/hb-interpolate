@@ -34,6 +34,7 @@
     "handlebars": "^3.0.3",
     "jsonfile": "^2.0.0",
     "lodash": "^3.8.0",
+    "npm": "^5.8.0",
     "read-package-json": "^2.0.0"
   },
   "devDependencies": {},
