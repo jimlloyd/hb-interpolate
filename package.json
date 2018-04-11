@@ -1,6 +1,6 @@
 {
   "name": "hb-interpolate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Interpolate a json file through a Handlebars template file to stdout.",
   "scripts": {
     "test": "./test.sh"
