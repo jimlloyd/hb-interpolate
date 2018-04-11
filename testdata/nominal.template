@@ -1,5 +1,5 @@
 // nominal.template
-{{name}}
+{{Capitalize name}}
 {{repository.url}}
 {{#if author.name}}
 {{author.name}} <mailto:{{author.name}}>
