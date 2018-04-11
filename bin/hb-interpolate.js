@@ -1,15 +1,20 @@
 #! /usr/bin/env node
 
-var _ = require('lodash');
-var BluePromise = require('bluebird');
-var chalk = require('chalk');
-var debug = require('debug');
-var fs = require('fs');
-var Handlebars = require('handlebars');
-var path = require('path');
-var program = require('commander');
+const _ = require('lodash');
+const chalk = require('chalk');
+const debug = require('debug');
+const fs = require('fs');
+const Handlebars = require('handlebars');
+const P = require('bluebird');
+const path = require('path');
+const program = require('commander');
 
-var dlog = debug('interpolate');
+const dlog = debug('interpolate');
+
+Handlebars.registerHelper('Capitalize', s => _.capitalize(s));
+Handlebars.registerHelper('snake_case', s => _.snakeCase(s));
+Handlebars.registerHelper('lowerCase', s => _.lowerCase(s));
+Handlebars.registerHelper('upperCase', s => _.toUpper(s));
 
 program
   .option('-j, --json [path]', 'JSON file with input data')
@@ -22,17 +27,17 @@ program
   })
   .parse(process.argv);
 
-var opts = program.opts();
+const opts = program.opts();
 
 if (_.isUndefined(opts.json) || _.isUndefined(opts.template)) {
   program.help();
 }
 
-var readTextP = BluePromise.promisify(fs.readFile, fs);
+const readTextP = P.promisify(fs.readFile, fs);
 
 function writeP(text) {
-  return new BluePromise(function (resolve, reject) {
-    process.stdout.write(text, 'utf8', function(err) {
+  return new P((resolve, reject) => {
+    process.stdout.write(text, 'utf8', err => {
       if (err) return reject(err);
       return resolve();
     });
@@ -40,9 +45,9 @@ function writeP(text) {
 }
 
 function readPackageJsonP(jsonPath) {
-  var readJson = require('read-package-json');
-  return new BluePromise(function (resolve, reject) {
-    readJson(jsonPath, console.error, false, function(err, data) {
+  const readJson = require('read-package-json');
+  return new P((resolve, reject) => {
+    readJson(jsonPath, console.error, false, (err, data) => {
       if (err) return reject(err);
       return resolve(data);
     });
@@ -52,20 +57,16 @@ function readPackageJsonP(jsonPath) {
 if (path.basename(opts.json) === 'package.json') {
   readJsonP = readPackageJsonP;
 } else {
-  var jsonfile = require('jsonfile');
-  readJsonP = BluePromise.promisify(jsonfile.readFile, jsonfile);
+  const jsonfile = require('jsonfile');
+  readJsonP = P.promisify(jsonfile.readFile, jsonfile);
 }
 
-BluePromise
-  .join(
+P.join(
     readJsonP(opts.json),
     readTextP(opts.template, { encoding: 'utf8' }),
-    function(json, templateText) {
-      var template = Handlebars.compile(templateText, { noEscape: program.opts().noEscape });
-      var result = template(json);
+    (json, templateText) => {
+      const template = Handlebars.compile(templateText, { noEscape: program.opts().noEscape });
+      const result = template(json);
       return result;
     })
-  .then(function(text) {
-    return writeP(text);
-  })
-  .done();
+  .then(text => writeP(text));
