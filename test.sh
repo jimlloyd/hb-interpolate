@@ -8,3 +8,6 @@ diff testdata/temp3.txt testdata/nominal.pkg.expected
 
 node bin/hb-interpolate.js -n -j testdata/foo.json -t testdata/nominal.template > testdata/temp4.txt
 diff testdata/temp4.txt testdata/nominal.foo.expected
+
+node bin/hb-interpolate.js -n -j testdata/foo.json -t testdata/stringalterations.template > testdata/stringalterations.txt
+diff testdata/stringalterations.txt testdata/stringalterations.txt.expected

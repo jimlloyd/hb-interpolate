@@ -27,13 +27,13 @@
   },
   "homepage": "https://github.com/jimlloyd/hb-interpolate",
   "dependencies": {
-    "bluebird": "^2.9.25",
-    "chalk": "^1.0.0",
+    "bluebird": "^3.5.1",
+    "chalk": "^2.3.2",
     "commander": "^2.8.1",
-    "debug": "^2.2.0",
+    "debug": "^3.1.0",
     "handlebars": "^4.0.0",
-    "jsonfile": "^2.0.0",
-    "lodash": "^3.8.0",
+    "jsonfile": "^4.0.0",
+    "lodash": "^4.17.5",
     "npm": "^5.8.0",
     "read-package-json": "^2.0.0"
   },

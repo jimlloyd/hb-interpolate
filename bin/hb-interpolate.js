@@ -13,8 +13,13 @@ const dlog = debug('interpolate');
 
 Handlebars.registerHelper('Capitalize', s => _.capitalize(s));
 Handlebars.registerHelper('snake_case', s => _.snakeCase(s));
-Handlebars.registerHelper('lowerCase', s => _.lowerCase(s));
-Handlebars.registerHelper('upperCase', s => _.toUpper(s));
+Handlebars.registerHelper('lowercase', s => _.lowerCase(s));
+Handlebars.registerHelper('lowerFirst', s => _.lowerFirst(s));
+Handlebars.registerHelper('UpperFirst', s => _.upperFirst(s));
+Handlebars.registerHelper('UPPERCASE', s => _.toUpper(s));
+Handlebars.registerHelper('camelCase', s => _.camelCase(s));
+Handlebars.registerHelper('CamelCase', s => _.upperFirst(_.camelCase(s)));
+Handlebars.registerHelper('kebab-case', s => _.kebabCase(s));
 
 program
   .option('-j, --json [path]', 'JSON file with input data')
