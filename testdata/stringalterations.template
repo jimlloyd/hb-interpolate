@@ -1,0 +1,10 @@
+original: {{description}}
+Capitalize: {{Capitalize description}}
+CamelCase: {{CamelCase description}}
+camelCase: {{camelCase description}}
+snake_case: {{snake_case description}}
+lowercase: {{lowercase description}}
+UPPERCASE: {{UPPERCASE description}}
+lowerFirst: {{lowerFirst description}}
+UpperFirst: {{UpperFirst description}}
+kebab-case: {{kebab-case description}}
